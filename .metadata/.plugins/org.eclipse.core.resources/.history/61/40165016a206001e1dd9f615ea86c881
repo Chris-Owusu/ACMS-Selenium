@@ -1,0 +1,19 @@
+package testCases;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+import utilities.ReadXLSXData;
+
+public class LoginTest extends BaseTest {
+	@Test(dataProviderClass=ReadXLSXData.class, dataProvider="tdata")
+	public void loginTest(String email, String password) throws InterruptedException {
+		driver.findElement(By.linkText(loc.getProperty("signInBtn"))).click();
+		driver.findElement(By.id(loc.getProperty("emailField"))).sendKeys(email);
+		driver.findElement(By.id(loc.getProperty("nxtBtn1"))).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(loc.getProperty("passwordField"))).sendKeys(password);
+		driver.findElement(By.id(loc.getProperty("nxtBtn2"))).click();
+	}
+}

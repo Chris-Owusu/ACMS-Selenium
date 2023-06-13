@@ -1,0 +1,6 @@
+loginEmailField=#email
+loginPasswordField=#password 	
+loginBtn=button
+
+
+categoryLink=//span[normalize-space()='Add skill category']
